@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>service</artifactId>
+        <groupId>com.lier.yygh</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>service-msm</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!--容联云通讯短信-->
+        <dependency>
+            <groupId>com.cloopen</groupId>
+            <artifactId>java-sms-sdk</artifactId>
+            <version>1.0.3</version>
+        </dependency>
+        <!-- 翻看了容联云的源码发现需要依赖谷歌的gson，如果不添加这个会报错 -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lier.yygh</groupId>
+            <artifactId>service-util</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lier.yygh</groupId>
+            <artifactId>rabbit-util</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

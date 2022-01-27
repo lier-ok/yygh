@@ -1,0 +1,41 @@
+# 服务端口
+server:
+  port: 8204
+  # 服务名
+spring:
+  application:
+   name: service-msm
+
+  #返回json的全局时间格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  redis:
+    host: 47.108.85.19
+    port: 6379
+    database: 0
+    timeout: 1800000
+    lettuce.pool.max-active: 20
+    lettuce.pool.max-wait: -1
+  #最大阻塞等待时间(负数表示没限制)
+    lettuce.pool.max-idle: 5
+    lettuce.pool.min-idle: 0
+
+  # nacos服务地址
+  cloud:
+    nacos:
+      discovery.server-addr: 127.0.0.1:8848
+  #rabbitmq地址
+  rabbitmq:
+    host: 47.108.85.19
+    port: 5672
+    username: admin
+    password: 123
+
+
+# 容联云短信
+rly:
+  acount:
+  token:
+  appId:

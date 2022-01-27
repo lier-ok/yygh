@@ -1,0 +1,33 @@
+# 服务端口
+server:
+  port: 8205
+  # 服务名
+spring:
+  application:
+   name: service-oss
+
+  servlet:
+    multipart:
+      # 最大支持文件大小
+      max-file-size: 100MB
+      # 最大支持文件大小
+      max-request-size: 100MB
+  #返回json的全局时间格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  # nacos服务地址
+  cloud:
+    nacos:
+      discovery.server-addr: 127.0.0.1:8848
+
+
+# 阿里云oss对象存储(不宜暴露,使用自己的)
+aliyun:
+  oss:
+    endpoint:
+    accessKeyId:
+    secret:
+    bucket:
+

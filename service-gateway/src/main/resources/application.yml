@@ -1,0 +1,57 @@
+server:
+  port: 81
+
+spring:
+  application:
+    name: server-gateway
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: service-hosp
+          uri: lb://service-hosp
+          predicates:
+            # 一个*表示一层路径,两个表示多层
+            - Path=/*/hosp/**
+
+        - id: service-dict
+          uri: lb://service-dict
+          predicates:
+            - Path=/*/cmn/**
+
+        - id: service-user
+          uri: lb://service-user
+          predicates:
+              - Path=/*/user/**
+
+        - id: service-msm
+          uri: lb://service-msm
+          predicates:
+              - Path=/*/msm/**
+
+        - id: service-userForWeixin
+          uri: lb://service-user
+          predicates:
+              - Path=/*/ucenter/**
+
+        - id: service-oss
+          uri: lb://service-oss
+          predicates:
+            - Path=/*/oss/**
+
+        - id: service-order
+          uri: lb://service-order
+          predicates:
+            - Path=/*/order/**
+
+        - id: service-statistics
+          uri: lb://service-statistics
+          predicates:
+            - Path=/*/statistics/**

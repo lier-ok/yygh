@@ -1,0 +1,27 @@
+# 服务端口
+server:
+  port: 8207
+  # 服务名
+spring:
+  application:
+    name: service-task
+
+
+  # nacos服务地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  #rabbitmq地址
+  rabbitmq:
+    host: 47.108.85.19
+    port: 5672
+    username: admin
+    password: 123
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
